@@ -1,11 +1,11 @@
 
 var config = {
-    apiKey: "AIzaSyCYWAS2LqRUm5vUcMPYKHjAm57SKAsy1Js",
-    authDomain: "my-project-58cab.firebaseapp.com",
-    databaseURL: "https://my-project-58cab.firebaseio.com",
-    projectId: "my-project-58cab",
-    storageBucket: "my-project-58cab.appspot.com",
-    messagingSenderId: "1007720850652"
+    apiKey: "AIzaSyA4yYb0x-vPzS-j7BKBF6lQ_CyjVE_POHg",
+    authDomain: "iot-smart-streetlight.firebaseapp.com",
+    databaseURL: "https://iot-smart-streetlight.firebaseio.com",
+    projectId: "iot-smart-streetlight",
+    storageBucket: "iot-smart-streetlight.appspot.com",
+    messagingSenderId: "360440005934"
 };
 firebase.initializeApp(config);
 
@@ -15,14 +15,14 @@ firebase.auth().onAuthStateChanged(function (user) {
 
         var user = firebase.auth().currentUser;
 
-        if (window.location.pathname == "/IOTAssignment/index.html") {
-            window.location.href = "/IOTAssignment/adminReport.html";
+        if (window.location.pathname == "/IOTAssignment/login.php") {
+            window.location.href = "/IOTAssignment/mainPage.php";
         }
 
     } else {
         // No user is signed in.
-        if (window.location.pathname != "/IOTAssignment/index.html") {
-            window.location.assign("/IOTAssignment/index.html");
+        if (window.location.pathname != "/IOTAssignment/login.php") {
+            window.location.assign("/IOTAssignment/login.php");
         }
 
     }
@@ -45,6 +45,6 @@ function login() {
 
 function logout() {
     firebase.auth().signOut();
-    window.location.href = "loginPage.php";
+    window.location.href = "login.php";
 }
 

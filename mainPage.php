@@ -67,71 +67,48 @@ foreach ($new_array as $index => $value) {
 
                 <ul class="nav navbar-right navbar-top-links">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <a class="dropdown-toggle" data-toggle="dropdown" onclick="logout()">
                             <i class="fa fa-user fa-fw"></i> Logout 
                         </a>
                     </li>
                 </ul>
 
-                <div class="navbar-default sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse">
-
-                        <!-- /.nav-second-level -->
-                        </li>
-                        </ul>
-                    </div>
-                    <!-- /.sidebar-collapse -->
-                </div>
                 <!-- /.navbar-static-side -->
             </nav>F
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Humidity Report</h1>
+                    <h1 class="page-header">Menu</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>Date Time On</th>
-                                            <th>Status</th>
-                                            <th>Date Time Off</th>
-                                            <th>Status</th>
-                                            <th>Duration</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        foreach ($bindArray as $key) {
-                                            $tempDuration = $key['Off']['Duration'] + 1;
-                                            echo '<tr>
-                                                <td>' . $key['On']['TimeDate'] . '</td>
-                                                <td>' . $key['On']['Status'] . '</td>
-                                                <td>' . $key['Off']['TimeDate'] . '</td>
-                                                <td>' . $key['Off']['Status'] . '</td>
-                                                <td>' . $tempDuration . '</td>
-                                            </tr>';
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
+            <div align="center">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" onClick="document.location.href = 'some/page'">
+                        Distress Call Report
+                    </button>
+                </span>
+                </br>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" onClick="document.location.href = 'humidityReport.php'">
+                        Humidity Report
+                    </button>
+                </span>
+                </br>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button"onClick="document.location.href = 'some/page'">
+                        Light Intensity Report
+                    </button>
+                </span>
+                </br>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" onClick="document.location.href = 'some/page'">
+                        Sensor Data Report
+                    </button>
+                </span>
             </div>
-            <!-- /.row -->
+
         </div>
         <!-- /#page-wrapper -->
 
@@ -152,14 +129,13 @@ foreach ($new_array as $index => $value) {
 
         <!-- Custom Theme JavaScript -->
         <script src="js/startmin.js"></script>
-
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
-            $(document).ready(function () {
-                $('#dataTables-example').DataTable({
-                    responsive: true
-                });
-            });
+                        $(document).ready(function () {
+                            $('#dataTables-example').DataTable({
+                                responsive: true
+                            });
+                        });
         </script>
 
     </body>
