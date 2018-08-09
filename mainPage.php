@@ -85,7 +85,7 @@ foreach ($new_array as $index => $value) {
             <!-- /.row -->
             <div align="center">
                 <span class="input-group-btn">
-                    <button class="btn btn-primary" type="button" onClick="document.location.href = 'some/page'">
+                    <button class="btn btn-primary" type="button" onClick="document.location.href = 'distressCallReport.php'">
                         Distress Call Report
                     </button>
                 </span>
