@@ -9,7 +9,7 @@ $firebase = new \Firebase\FirebaseLib(DEFAULT_URL);
 // --- storing a string ---
 //$firebase->set(DEFAULT_PATH . '/name/contact001', "John Doe");
 // --- reading the stored string ---
-$data = $firebase->get(DEFAULT_PATH . '/ObjectDetected');
+$data = $firebase->get(DEFAULT_PATH . '/Object Detected');
 $dataArray = json_decode($data, true);
 ?>
 <html lang="en">
@@ -17,6 +17,9 @@ $dataArray = json_decode($data, true);
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+        <script src="login.js"></script>
         <meta name="description" content="">
         <meta name="author" content="">
 
@@ -91,8 +94,8 @@ $dataArray = json_decode($data, true);
                                         <?php
                                         foreach ($dataArray as $key) {
                                             echo '<tr>
-                                                <td>' . $key['Date'] . '</td>
-                                                <td>' . $key['Number'] . '</td>
+                                                <td>' . $key['Date Time'] . '</td>
+                                                <td>' . $key['Number of Object Detected'] . '</td>
                                             </tr>';
                                         }
                                         ?>

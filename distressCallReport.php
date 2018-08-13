@@ -27,6 +27,9 @@ foreach ($new_array as $index => $value) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+        <script src="login.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -94,6 +97,7 @@ foreach ($new_array as $index => $value) {
                                         <tr>
                                             <th>Distress signal date time</th>
                                             <th>Interval from previous press</th>
+                                            <th>Mac address</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -102,7 +106,8 @@ foreach ($new_array as $index => $value) {
                                             //$tempDuration = $key['Off']['Duration'] + 1;
                                             echo '<tr>
                                                 <td>' . $key['On']['TimeDate'] . '</td>
-                                                <td>' . $key['On']['interval from last press'] . '</td>
+                                                <td>' . $key['On']['interval from previous press'] . '</td>
+                                                    <td>' . $key['On']['mac address'] . '</td>
                                             </tr>';
                                         }
                                         ?>
@@ -139,11 +144,11 @@ foreach ($new_array as $index => $value) {
 
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
-            $(document).ready(function () {
-                $('#dataTables-example').DataTable({
-                    responsive: true
-                });
-            });
+                            $(document).ready(function () {
+                                $('#dataTables-example').DataTable({
+                                    responsive: true
+                                });
+                            });
         </script>
 
     </body>

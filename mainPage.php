@@ -1,27 +1,4 @@
 <?php
-require 'vendor/autoload.php';
-const DEFAULT_URL = 'https://iot-smart-streetlight.firebaseio.com';
-const DEFAULT_PATH = '/';
-
-$firebase = new \Firebase\FirebaseLib(DEFAULT_URL);
-
-
-// --- storing a string ---
-//$firebase->set(DEFAULT_PATH . '/name/contact001', "John Doe");
-// --- reading the stored string ---
-$data = $firebase->get(DEFAULT_PATH . '/Humidity');
-$dataArray = json_decode($data, true);
-$bindArray = array();
-
-$new_array = array_values($dataArray);
-
-foreach ($new_array as $index => $value) {
-    #echo $dataArray [$index]['price'];
-    if ($index % 2 == 0 || $index == 0) { // skip even members
-        $tempArray = array("On" => $new_array[$index], "Off" => $new_array[$index + 1]);
-        $bindArray[] = $tempArray;
-    }
-}
 ?>
 <html lang="en">
     <head>
@@ -30,8 +7,11 @@ foreach ($new_array as $index => $value) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+        
+        <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+        <script src="login.js"></script>
 
-        <title>Humidity Report</title>
+        <title>Main Page</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -97,14 +77,20 @@ foreach ($new_array as $index => $value) {
                 </span>
                 </br>
                 <span class="input-group-btn">
-                    <button class="btn btn-primary" type="button"onClick="document.location.href = 'some/page'">
+                    <button class="btn btn-primary" type="button"onClick="document.location.href = 'objectDetectionReport.php'">
                         Light Intensity Report
                     </button>
                 </span>
                 </br>
                 <span class="input-group-btn">
-                    <button class="btn btn-primary" type="button" onClick="document.location.href = 'some/page'">
+                    <button class="btn btn-primary" type="button" onClick="document.location.href = 'Sensor_report.php'">
                         Sensor Data Report
+                    </button>
+                </span>
+                <br/>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" onClick="document.location.href = 'sendMessages.php'">
+                        Send Message
                     </button>
                 </span>
             </div>

@@ -14,12 +14,14 @@ $dataArray = json_decode($data, true);
 $bindArray = array();
 
 $new_array = array_values($dataArray);
-
+$totalDuration = 0;
 foreach ($new_array as $index => $value) {
     #echo $dataArray [$index]['price'];
     if ($index % 2 == 0 || $index == 0) { // skip even members
         $tempArray = array("On" => $new_array[$index], "Off" => $new_array[$index + 1]);
         $bindArray[] = $tempArray;
+        print_r($value['TimeDate']);
+        print_r("asdjhsjahguidfughisudfg");
     }
 }
 ?>
@@ -27,6 +29,8 @@ foreach ($new_array as $index => $value) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+        <script src="login.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -62,19 +66,7 @@ foreach ($new_array as $index => $value) {
 
         <div id="wrapper">
 
-            <!-- Navigation -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-
-                <ul class="nav navbar-right navbar-top-links">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" onclick="logout()">
-                            <i class="fa fa-user fa-fw"></i> Logout 
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- /.navbar-static-side -->
-            </nav>F
+            
 
             <div class="row">
                 <div class="col-lg-12">

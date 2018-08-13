@@ -21,7 +21,7 @@ and open the template in the editor.
         ?>
         <div class="container">  
             <form id="contact" action="sendMessages.php" method="post">
-                <h3>Add new Catalog form</h3>
+                <h3>Add Message</h3>
                 <h4>Insert all the fields</h4>
                 <?php
                 if ($_POST) {
