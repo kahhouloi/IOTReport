@@ -88,6 +88,7 @@ $dataArray = json_decode($data, true);
                                         <tr>
                                             <th>Date</th>
                                             <th>Number of Object Detected</th>
+                                            <th>Mac Address</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -96,6 +97,8 @@ $dataArray = json_decode($data, true);
                                             echo '<tr>
                                                 <td>' . $key['Date Time'] . '</td>
                                                 <td>' . $key['Number of Object Detected'] . '</td>
+                                                    <td>' . $key['Date Time'] . '</td>
+                                                <td>' . $key['Mac Address'] . '</td>
                                             </tr>';
                                         }
                                         ?>
