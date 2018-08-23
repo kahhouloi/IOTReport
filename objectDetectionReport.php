@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 require 'vendor/autoload.php';
 const DEFAULT_URL = 'https://iot-smart-streetlight.firebaseio.com';
 const DEFAULT_PATH = '/';
@@ -97,7 +98,6 @@ $dataArray = json_decode($data, true);
                                             echo '<tr>
                                                 <td>' . $key['Date Time'] . '</td>
                                                 <td>' . $key['Number of Object Detected'] . '</td>
-                                                    <td>' . $key['Date Time'] . '</td>
                                                 <td>' . $key['Mac Address'] . '</td>
                                             </tr>';
                                         }
